@@ -1,0 +1,14 @@
+## scafold empty frontend
+name: # Fill in name
+
+shouldPushRepositories: false
+
+modules:
+  templates:
+    files:
+      dir: output
+      source: .
+    parameters:
+      subdomain: # frontend
+      build_command: npm run export
+      build_output_folder: out/
