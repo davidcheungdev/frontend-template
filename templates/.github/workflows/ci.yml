@@ -4,7 +4,7 @@ on:
     branches: [master, main]
 env:
   region: ${{ secrets.AWS_DEFAULT_REGION }}
-  S3_bucket: s3://${{ secrets.STATIC_SITE_BUCKET_PREFIX }}/<% index .Params `subdomain` %>
+  S3_bucket: s3://${{ secrets.STATIC_SITE_BUCKET_PREFIX }}/<% .Name %>
 jobs:
   unit-test:
     runs-on: ubuntu-latest

@@ -14,53 +14,35 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          Sample static site deployment
         </h1>
 
         <p className={styles.description}>
-          Get started by editing{' '}
+          Get started by editing
           <code className={styles.code}>pages/index.js</code>
         </p>
 
         <div className={styles.grid}>
+          <a href="./page1" className={styles.card}>
+            <h2>Sample page 1 &rarr;</h2>
+            <p>Go to Sample page 1</p>
+          </a>
+
+          <a href="./pages/page2" className={styles.card}>
+            <h2>Sample nested page 2 &rarr;</h2>
+            <p>Go to Sample nested page 2</p>
+          </a>
+
           <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
+            <h2>Next.js documentation &rarr;</h2>
             <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
           </a>
         </div>
       </main>
 
       <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          
+        <a href="https://github.com/commitdev/zero" target="_blank">
+          Powered by{'Zero'}
         </a>
       </footer>
     </div>
