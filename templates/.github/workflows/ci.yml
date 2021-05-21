@@ -4,6 +4,7 @@ on:
     branches: [master, main]
 env:
   region: ${{ secrets.AWS_DEFAULT_REGION }}
+  ## DO NOT CHANGE, you will overwrite others' projects if you remove your prefix
   S3_bucket: s3://${{ secrets.STATIC_SITE_BUCKET_PREFIX }}/<% .Name %>
 jobs:
   unit-test:
