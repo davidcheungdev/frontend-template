@@ -23,12 +23,12 @@ export default function Home() {
         </p>
 
         <div className={styles.grid}>
-          <a href="./page1" className={styles.card}>
+          <a href="./page1" target="_self" className={styles.card}>
             <h2>Sample page 1 &rarr;</h2>
             <p>Go to Sample page 1</p>
           </a>
 
-          <a href="./pages/page2" className={styles.card}>
+          <a href="./pages/page2" target="_self" className={styles.card}>
             <h2>Sample nested page 2 &rarr;</h2>
             <p>Go to Sample nested page 2</p>
           </a>

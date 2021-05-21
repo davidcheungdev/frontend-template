@@ -11,12 +11,12 @@ export default function Page1() {
         </h1>
 
         <div className={styles.grid}>
-          <a href="/" className={styles.card}>
+          <a href="/" target="_self" className={styles.card}>
             <h2>Home &rarr;</h2>
             <p>Go to home</p>
           </a>
 
-          <a href="/page1" className={styles.card}>
+          <a href="/page1" target="_self" className={styles.card}>
             <h2>Sample page 1 &rarr;</h2>
             <p>Go to Sample page 1</p>
           </a>
@@ -25,7 +25,7 @@ export default function Page1() {
 
       <footer className={styles.footer}>
         <a href="https://github.com/commitdev/zero" target="_blank">
-          Powered by{'Zero'}
+          Powered by {'Zero'}
         </a>
       </footer>
     </div>

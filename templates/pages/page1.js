@@ -11,12 +11,12 @@ export default function Page1() {
         </h1>
 
         <div className={styles.grid}>
-          <a href="/" className={styles.card}>
+          <a href="/" target="_self" className={styles.card}>
             <h2>Home &rarr;</h2>
             <p>Go to home</p>
           </a>
 
-          <a href="/pages/page2" className={styles.card}>
+          <a href="/pages/page2" target="_self" className={styles.card}>
             <h2>Sample page 2 &rarr;</h2>
             <p>Go to Sample page 2</p>
           </a>
