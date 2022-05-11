@@ -32,7 +32,7 @@ jobs:
 
   setup:
     needs: template_check
-    if: ${{needs.should_reinitalize.outputs.should_reinitalize}} = true
+    if: ${{ needs.should_reinitalize.outputs.should_reinitalize }} == 'true'
     name: Reinitialize repository
     runs-on: ubuntu-latest
     env:
