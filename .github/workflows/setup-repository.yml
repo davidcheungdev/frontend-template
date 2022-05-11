@@ -8,7 +8,7 @@ jobs:
     name: Only run initialization when its not a templated repository
     runs-on: ubuntu-latest
     outputs:
-      is_template: ${{ steps.set_output.outputs.is_template }}
+      should_reinitalize: ${{ steps.set_output.outputs.should_reinitalize }}
     steps:
       - name: Do not run scaffolding on template repository
         shell: bash
@@ -19,20 +19,20 @@ jobs:
         # Using the GitHub rest API allows us to identify if the current repository
         # is a template repository or not.
         run: |
-          echo "IS_TEMPLATE=$(curl --silent -X GET \
+          echo "SHOULD_REINITALIZE=$(curl --silent -X GET \
           -H \"Authorization: token $GITHUB_TOKEN\" \
           -H \"Accept: application/vnd.github.baptiste-preview+json\" \
           https://api.github.com/repos/$GITHUB_REPOSITORY \
-          | jq -r .is_template)" >> $GITHUB_ENV
+          | jq -r '.is_template==false')" >> $GITHUB_ENV
       - name: debug
         shell: bash
-        run: echo "IS_TEMPLATE is ${{ env.IS_TEMPLATE }}"
+        run: echo "SHOULD_REINITALIZE is ${{ env.SHOULD_REINITALIZE }}"
       - id: set_output
-        run: echo "::set-output name=is_template::${{ env.IS_TEMPLATE }}"
+        run: echo "::set-output name=should_reinitalize::${{ env.SHOULD_REINITALIZE }}"
 
   setup:
     needs: template_check
-    if: ${{needs.template_check.outputs.is_template}} != true
+    if: ${{needs.should_reinitalize.outputs.should_reinitalize}} == true
     name: Reinitialize repository
     runs-on: ubuntu-latest
     env:
