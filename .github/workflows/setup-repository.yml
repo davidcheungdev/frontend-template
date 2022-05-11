@@ -4,7 +4,7 @@ on:
     paths:
       - zero-project.yml
 jobs:
-  is_template:
+  template_check:
     name: Only run initialization when its not a templated repository
     runs-on: ubuntu-latest
     steps:
@@ -25,12 +25,12 @@ jobs:
       - name: debug
         shell: bash
         run: echo "IS_TEMPLATE is ${{ env.IS_TEMPLATE }}"
-      - name: exit
-        shell: bash
-        run: exit 1
+      - name: set_output
+        run: echo "::set-output name=is_template::${{ env.IS_TEMPLATE }}"
 
   setup:
-    # if: echo "${IS_TEMPLATE}" != true
+    needs: template_check
+    if: ${{needs.template_check.outputs.is_template}} != true
     name: Reinitialize repository
     runs-on: ubuntu-latest
     env:
