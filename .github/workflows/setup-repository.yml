@@ -17,11 +17,11 @@ jobs:
         # Using the GitHub rest API allows us to identify if the current repository
         # is a template repository or not.
         run: |
-          echo IS_TEMPLATE=$(curl --silent -X GET \
-          -H "Authorization: token $GITHUB_TOKEN" \
-          -H "Accept: application/vnd.github.baptiste-preview+json" \
+          echo "IS_TEMPLATE=$(curl --silent -X GET \
+          -H \"Authorization: token $GITHUB_TOKEN\" \
+          -H \"Accept: application/vnd.github.baptiste-preview+json\" \
           https://api.github.com/repos/$GITHUB_REPOSITORY \
-          | jq -r .is_template) >> $GITHUB_ENV
+          | jq -r .is_template)" >> $GITHUB_ENV
       - name: debug
         shell: bash
         run: echo "IS_TEMPLATE is ${{ env.IS_TEMPLATE }}"
