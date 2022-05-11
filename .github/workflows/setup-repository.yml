@@ -25,9 +25,12 @@ jobs:
       - name: debug
         shell: bash
         run: echo "IS_TEMPLATE is ${{ env.IS_TEMPLATE }}"
+      - name: exit
+        shell: bash
+        run: exit 1
 
   setup:
-    if: echo "${IS_TEMPLATE}" != true
+    # if: echo "${IS_TEMPLATE}" != true
     name: Reinitialize repository
     runs-on: ubuntu-latest
     env:
