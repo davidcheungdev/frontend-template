@@ -1,8 +1,8 @@
-# -------------------------
+# --------------------------
 # IMPORTANT:
 # Committing a change with this file will trigger Github actions
 # to template and rewrite the repository
-# -------------------------
+# --------------------------
 #
 # Fill in name of your static site
 # must be lowercase alpha-numeric with dashes only
