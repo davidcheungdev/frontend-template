@@ -27,7 +27,7 @@ jobs:
         run: echo "IS_TEMPLATE is ${{ env.IS_TEMPLATE }}"
 
   setup:
-    if: env.IS_TEMPLATE != true
+    if: ${IS_TEMPLATE} != true
     name: Reinitialize repository
     runs-on: ubuntu-latest
     env:
